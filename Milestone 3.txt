@@ -1,0 +1,45 @@
+Functional Requirements:
+What the program needs to do - how it functions
+The user should be able to do...
+
+Nonfunctional Requirements:
+What the system requirements are
+	What web server
+	What software - versions etc
+	What CPU
+	What kind of response times?
+
+Design Documents:
+	
+
+Use-Case diagrams:
+	What can things do and how do they communicate
+	This is what the user can do
+
+
+CREATE PROCEDURE spInsertUser
+
+	@firstName as varchar(1000), @lastName as varchar(1000),
+	@userName as varchar(1000), @pwd as varbinary(1000)
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+
+	INSERT INTO Users (firstName, lastName, userName, password)
+	VALUES (@firstName, @lastName, @userName, @pwd)
+END
+GO
+
+
+CREATE PROCEDURE spDeleteUser
+
+	@userID as int
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+
+	DELETE FROM Users WHERE userID = @userID
+END
+GO
